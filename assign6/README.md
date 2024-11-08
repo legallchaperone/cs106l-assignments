@@ -40,3 +40,13 @@ As you are following the instructions below, we recommend intermittently compili
 > ```sh
 > ./main.exe
 > ```
+
+## 🚀 Submission Instructions
+
+Before you submit the assignment, please fill out this [short feedback form](https://forms.gle/VWH3ADoSDfBgxiSG9). **Completion of the form is required to receive credit for the assignment.** After filling out the form, please upload the files to Paperless under the correct assignment heading.
+
+Your deliverable should be:
+
+- `main.cpp`
+
+You may resubmit as many times as you'd like before the deadline.

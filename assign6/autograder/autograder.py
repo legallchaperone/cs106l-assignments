@@ -1,6 +1,5 @@
-import functools
-from typing import List
 from utils import Autograder, ASSIGNMENT_DIR
+from typing import List
 
 import os
 import subprocess
@@ -37,7 +36,6 @@ def verify_output(courses: List[str], found: bool):
         expected = f"Found course: {course}" if found else "Course not found."
 
         if actual != expected:
-            nl = "\n\t"
             raise RuntimeError(
                 f"For course {course_name}, expected output:\n\t{expected}\nbut got:\n\t{actual}"
             )
@@ -45,6 +43,8 @@ def verify_output(courses: List[str], found: bool):
 
 if __name__ == "__main__":
     grader = Autograder()
+
+    grader.setup = lambda: 
 
     grader.add_part(
         "Present Courses",
