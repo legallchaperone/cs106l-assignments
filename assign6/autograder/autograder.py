@@ -43,9 +43,6 @@ def verify_output(courses: List[str], found: bool):
 
 if __name__ == "__main__":
     grader = Autograder()
-
-    grader.setup = lambda: 
-
     grader.add_part(
         "Present Courses",
         lambda: verify_output(
