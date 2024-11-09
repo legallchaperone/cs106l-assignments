@@ -4,6 +4,10 @@ Due Friday, November 15th at 11:59PM
 
 ## Overview
 
+> [!IMPORTANT]
+> To complete this assignment you'll need the content in the lecture on November 12th.
+> We've scoped this assignment such that it should be reasonable to finish it by Friday, even though the lecture is on Tuesday.
+
 In this assignment you will be exercising your understanding of `std::optional`. We'll be making use of the same `courses.csv` from assignment 1. You are tasked to write one function for this assignment, which attempts to find the a `Course` in the `CourseDatabase` object, and return it. Take a look at the code and review the `CourseDatabase` class to understand the interface.
 
 ## Running your code
