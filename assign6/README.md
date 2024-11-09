@@ -4,8 +4,7 @@ Due Friday, November 15th at 11:59PM
 
 ## Overview
 
-> [!IMPORTANT]
-> TODO
+In this assignment you will be exercising your understanding of `std::optional`. We'll be making use of the same `courses.csv` from assignment 1. You are tasked to write one function for this assignment, which attempts to find the a `Course` in the `CourseDatabase` object, and return it. Take a look at the code and review the `CourseDatabase` class to understand the interface.
 
 ## Running your code
 
@@ -40,6 +39,34 @@ As you are following the instructions below, we recommend intermittently compili
 > ```sh
 > ./main.exe
 > ```
+
+## Part 0: Include `<optional>`
+
+At the top of the `main.cpp` include `<optional>`, we're going to make use of `std::optional` in this assignment!
+
+## Part 1: Write the `find_course` function
+
+This function takes in a string `course_title`, and the function should try to find the `course` inside of the private `courses` member of the `CourseDatabase` object. What should the return type be? (hint: there may or may not be a `Course` for the `course_title` passed in)
+
+> [!NOTE]
+> You need to change the type returned by `find_course` which is currenty `FillMeIn`.
+
+## Part 2: Change the conditional in the `main` function
+
+Notice that we call the `find_course` here in the `main` function:
+
+```cpp
+auto course = db.find_course(argv[1]);
+```
+
+Now, you need to change the conditional that prints out whether or not a course is found.
+Currently the conditional is:
+
+```cpp
+if (false) {...}
+```
+
+Think about the type of `course`, and the interface of that type.
 
 ## 🚀 Submission Instructions
 
