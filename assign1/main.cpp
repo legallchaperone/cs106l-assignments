@@ -25,9 +25,9 @@ const std::string COURSES_NOT_OFFERED_PATH = "student_output/courses_not_offered
  * Hint: Remember what types C++ streams work with?!
  */
 struct Course {
-  /* STUDENT TODO */ title;
-  /* STUDENT TODO */ number_of_units;
-  /* STUDENT TODO */ quarter;
+  std::string title;
+  int number_of_units;
+  std::string quarter;
 };
 
 /**
@@ -58,8 +58,33 @@ struct Course {
  * @param filename The name of the file to parse.
  * @param courses  A vector of courses to populate.
  */
-void parse_csv(std::string filename, std::vector<Course> courses) {
-  /* (STUDENT TODO) Your code goes here... */
+void parse_csv(const std::string& filename, std::vector<Course>& courses) {
+  //open the file
+  std::ifstream file(filename);
+  if(!file.is_open()) {
+    std::cerr<< "Cannot open: "<< filename << std::endl;
+    return;
+    // close the file
+    file.close();
+  }
+
+  //skip the first line
+  std::string line;
+  std::getline(file, line);
+
+  //read and parse lines
+  while(std::getline(file, line)) {
+    std::vector<std::string> tokens = split(line, ',');
+    if (tokens.size() == 3) {
+      Course course = {tokens[0], std::stoi(tokens[1]), tokens[2]};
+      courses.push_back(course);
+    } else {
+      std::cerr << "Invalid record: " << line << std::endl;
+    }
+  }
+  file.close();
+  return;
+
 }
 
 /**
