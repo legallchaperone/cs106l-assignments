@@ -59,8 +59,18 @@ def check_files_equal(expected, actual):
         diff = [f"\t{l}" for l in diff]
         diff_output = "".join(diff)
 
-        diff_output = re.sub(r"^\s*-+", lambda match: f"{Fore.RED}{match.group(0)}{Fore.RESET}", diff_output, flags=re.MULTILINE)
-        diff_output = re.sub(r"^\s*\++", lambda match: f"{Fore.GREEN}{match.group(0)}{Fore.RESET}", diff_output, flags=re.MULTILINE)
+        diff_output = re.sub(
+            r"^\s*-+",
+            lambda match: f"{Fore.RED}{match.group(0)}{Fore.RESET}",
+            diff_output,
+            flags=re.MULTILINE,
+        )
+        diff_output = re.sub(
+            r"^\s*\++",
+            lambda match: f"{Fore.GREEN}{match.group(0)}{Fore.RESET}",
+            diff_output,
+            flags=re.MULTILINE,
+        )
 
         raise RuntimeError(
             f"Contents of '{os.path.relpath(actual, PATH)}' do not equal solution:\n{diff_output}"
