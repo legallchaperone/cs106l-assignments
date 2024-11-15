@@ -105,9 +105,27 @@ void parse_csv(const std::string& filename, std::vector<Course>& courses) {
  * @param all_courses A vector of all courses gotten by calling `parse_csv`.
  *                    This vector will be modified by removing all offered courses.
  */
-void write_courses_offered(std::vector<Course> all_courses) {
-  /* (STUDENT TODO) Your code goes here... */
+void write_courses_offered(std::vector<Course>& all_courses) {
+  //Create the output file and write the first line
+  std::ofstream file("student_output/courses_offered.csv");
+  file << "Title,Number of Units,Quarter" << std::endl;
+
+  //Write courses into csv
+  for (const auto& course : all_courses) {
+    if(course.quarter != "null") {
+      file << course.title << "," << course.number_of_units << "," << course.quarter << std::endl;
+    }
+  }
+
+  //Erase offered courses
+  all_courses.erase(
+        std::remove_if(all_courses.begin(), all_courses.end(), [](const Course& course) {
+            return course.quarter == "null";
+        }),
+        all_courses.end()
+    );
 }
+
 
 /**
  * This function writes the courses NOT offered to the file
