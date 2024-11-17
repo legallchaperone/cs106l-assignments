@@ -136,7 +136,7 @@ void write_courses_offered(std::vector<Course> &all_courses) {
  *
  * @param unlisted_courses A vector of courses that are not offered.
  */
-void write_courses_not_offered(std::vector<Course> unlisted_courses) {
+void write_courses_not_offered(std::vector<Course> &unlisted_courses) {
 	// Create the output file and write the first line
 }
 
@@ -146,7 +146,7 @@ int main() {
 
 	std::vector<Course> courses;
 	parse_csv("courses.csv", courses);
-
+	
 	/* Uncomment for debugging... */
 	// print_courses(courses);
 
